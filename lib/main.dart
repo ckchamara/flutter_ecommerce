@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/config/app-router.dart';
+
+// import 'package:flutter_ecommerce/config/app-router.dart';
 import 'package:flutter_ecommerce/screens/homeScreen.dart';
 
 void main() {
@@ -14,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home:  HomeScreen(),
+      onGenerateRoute: AppRouter.onGeneratedRoute,
+      initialRoute: HomeScreen.routeName,
     );
   }
 }
