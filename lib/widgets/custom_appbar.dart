@@ -1,11 +1,13 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/screens/wishlistScreen.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
+class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
+
   const CustomAppBar({
-    Key? key, required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -18,15 +20,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           title,
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontFamily: 'Avenir',
-              fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headline2?.copyWith(color: Colors.white),
         ),
       ),
       iconTheme: IconThemeData(color: Colors.black),
-      actions: [IconButton(icon: Icon(Icons.favorite), onPressed: (){}, )],
+      actions: [
+        IconButton(
+          icon: Icon(Icons.favorite),
+          onPressed: () {
+            Navigator.pushNamed(context, '/wishlist');
+          },
+        )
+      ],
     );
   }
 

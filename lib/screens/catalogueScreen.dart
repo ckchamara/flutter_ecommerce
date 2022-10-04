@@ -13,7 +13,7 @@ class CatalogueScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Cart'),
+      appBar: CustomAppBar(title: 'Catalogue'),
       bottomNavigationBar: CustomNavBar(),
     );
   }
