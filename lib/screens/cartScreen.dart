@@ -17,4 +17,5 @@ class CartScreen extends StatelessWidget {
       bottomNavigationBar: CustomNavBar(),
     );
   }
+
 }
