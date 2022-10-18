@@ -5,7 +5,7 @@ import 'package:flutter_ecommerce/screens/wishlistScreen.dart';
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
 
-  const CustomAppBar({
+    const CustomAppBar({
     Key? key,
     required this.title,
   }) : super(key: key);
