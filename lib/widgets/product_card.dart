@@ -48,14 +48,14 @@ class ProductCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          Product.products[0].name,
+                          product.name,
                           style: Theme.of(context)
                               .textTheme
                               .headline5
                               ?.copyWith(color: Colors.white),
                         ),
                         Text(
-                          '\$${Product.products[0].name}',
+                          '\$${product.name}',
                           style: Theme.of(context)
                               .textTheme
                               .headline6

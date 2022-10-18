@@ -6,6 +6,7 @@ import 'package:flutter_ecommerce/widgets/custom_appbar.dart';
 import 'package:flutter_ecommerce/widgets/custom_navbar.dart';
 import 'package:flutter_ecommerce/widgets/hero_crousel_card.dart';
 import 'package:flutter_ecommerce/widgets/product_card.dart';
+import 'package:flutter_ecommerce/widgets/product_carousel.dart';
 import 'package:flutter_ecommerce/widgets/section_title_homePage.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -39,17 +40,17 @@ class HomeScreen extends StatelessWidget {
                       .toList(),
                 )),
             const SectionTitle(title: 'RECOMMEND'),
-            //Product Card
-            // ProductCard(
-            //   product: Product.products[0],
-            // )
-            SizedBox(
-              height: 165,
-              child: ListView.builder(shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: Product.products.length,
-                  itemBuilder: itemBuilder),
-            )
+            ProductCarousel(
+              products: Product.products
+                  .where((prod) => prod.isRecommended == true)
+                  .toList(),
+            ),
+            const SectionTitle(title: 'MOST POPULAR'),
+            ProductCarousel(
+              products: Product.products
+                  .where((prod) => prod.isPopular == true)
+                  .toList(),
+            ),
           ],
         ),
       ),
