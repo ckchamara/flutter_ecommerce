@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/models/product_model.dart';
@@ -5,17 +6,20 @@ import 'package:flutter_ecommerce/models/product_model.dart';
 class ProductCard extends StatelessWidget {
 
   final Product product;
+  final double widthFactor;
+
   const ProductCard({
-    Key? key, required this.product,
+    Key? key, required this.product,  this.widthFactor = 2.5,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double widthValue = MediaQuery.of(context).size.width / widthFactor;
     return Stack(
       children: [
         Container(
           height: 150,
-          width: MediaQuery.of(context).size.width / 2.5,
+          width: widthValue,
           child: Image.network(
             product.imgUrl,
             fit: BoxFit.cover,
